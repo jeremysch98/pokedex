@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  db:
+    image: mongo:5
+    restart: always
+    ports:
+      - 27017:27017 #puerto_del_equipo:puerto_del_contenedor
+    environment:
+      MONGODB_DATABASE: nest_pokemon #nombre de la base de datos
+    volumes:
+      - ./mongo:/data/db #carpeta_generada_en_proyecto:carpeta_en_la_imagen_del_contenedor
